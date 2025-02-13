@@ -1,6 +1,6 @@
 {
-    "name": "virtual-merge",
-    "version": "1.0.1",
+    "name": "@sadan4/virtual-merge",
+    "version": "1.0.2",
     "description": "A utility library to merge multiple Objects virtually",
     "types": "dist/index.d.ts",
     "scripts": {
