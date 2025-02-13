@@ -37,4 +37,3 @@ function virtualMerge<O extends object[]>(...objects: O): ExtractObjectType<O> {
 }
 
 export default virtualMerge;
-if (typeof module !== "undefined") module.exports = virtualMerge;

@@ -4,17 +4,23 @@
     "description": "A utility library to merge multiple Objects virtually",
     "types": "dist/index.d.ts",
     "scripts": {
-        "build": "tsc && esbuild src/index.ts --outfile=dist/index.mjs",
+        "build": "pnpm dts && pnpm build:esm && pnpm build:cjs",
+        "build:cjs": "esbuild src/index.ts --format=cjs --outfile=dist/index.js",
+        "build:esm": "esbuild src/index.ts --format=esm --outfile=dist/index.mjs",
+        "dts": "tsc --emitDeclarationOnly",
         "test": "tsx src/test.ts",
         "prepublishOnly": "pnpm build"
     },
     "keywords": [
-        "merge", "objects"
+        "merge",
+        "objects"
     ],
     "author": "Vendicated <vendicated+npm@riseup.net>",
     "license": "MIT",
     "devDependencies": {
-        "@types/node": "^18.15.0"
+        "@types/node": "^18.15.0",
+        "esbuild": "^0.25.0",
+        "typescript": "^5.7.3"
     },
     "exports": {
         "import": "./dist/index.mjs",
@@ -25,5 +31,6 @@
         "type": "git",
         "url": "https://github.com/Vendicated/virtual-merge.git"
     },
-    "homepage": "https://github.com/Vendicated/virtual-merge"
+    "homepage": "https://github.com/Vendicated/virtual-merge",
+    "packageManager": "pnpm@9.1.4+sha512.9df9cf27c91715646c7d675d1c9c8e41f6fce88246f1318c1aa6a1ed1aeb3c4f032fcdf4ba63cc69c4fe6d634279176b5358727d8f2cc1e65b65f43ce2f8bfb0"
 }
